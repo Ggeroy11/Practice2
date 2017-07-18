@@ -10,12 +10,13 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите 5 чисел");
+            Console.WriteLine("Введите 5 чисел для заполнения одномерного массива");
             const int size = 5;
             const int row = 3;
             const int column = 4;
             int[] A = new int[size];
             int[,] B = new int[row, column];
+            Console.WriteLine("\nОдномерный массив");
             for (int i = 0; i < A.Length; i++)
             {
                 string number = Console.ReadLine();
@@ -28,6 +29,13 @@ namespace ConsoleApplication1
                 {
                     B[i, j] = rnd.Next(0, 100);
                 }
+            }
+            Console.WriteLine("\nДвумерный массив\n");
+            for (int i=0;i<row;i++) {
+                for (int j=0;j<column;j++) {
+                    Console.Write(B[i, j]+" ");
+                }
+                Console.WriteLine("\n");
             }
             int maxA = A[0];
             int minA = A[0];

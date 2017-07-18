@@ -16,7 +16,7 @@ namespace ConsoleApplication3
             foreach (string s in test) {
                 count++; 
             }
-            Console.WriteLine("Количество слов в строке {0}", --count);
+            Console.WriteLine("Количество слов в строке {0}", count);
             Console.ReadLine();
         }
     }

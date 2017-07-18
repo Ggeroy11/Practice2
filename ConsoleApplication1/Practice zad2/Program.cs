@@ -11,30 +11,25 @@ namespace Practice_zad2
         static void Main(string[] args)
         {
             const int size = 5;
-            const int sizeK = 10;
+            int count = 0;
             char[] M = new char[size] { 'H', 'e', 'l', 'l', 'o' };
             char[] N = new char[size] { 'W', 'o', 'r', 'l', 'd' };
-            char[] K = new char[sizeK] ;
-            for (int i=0;i<size;i++) {
-                K[i] = M[i];
-                if (i == 4) {
-                    for (int j=5,k=0 ;j<sizeK;j++,k++) {
-                        K[j] = N[k];
+            char[] K = new char[10];
+
+            for (int i=0; i<size;i++) {
+                for (int j=0; j<size;j++) {
+                    if (M[i] == N[j]) {
+                        for (int k=0;k<count ;k++) {
+                            if (K[k] == M[i]) {
+                                K[count] = M[i];
+                                count++;
+                            }
+                        }
                     }
                 }
             }
-            for (int i=0;i<sizeK;i++) {
-                if (i < size)
-                {
-                    Console.Write(K[i]);
-                }
-                else if (i == size)
-                {
-                    Console.Write(" "+K[i]);
-                }
-                else {
-                    Console.Write(K[i]);
-                }
+            for (int i=0;i<count;i++) {
+                Console.WriteLine(K[i]);
             }
             Console.ReadLine();
         }

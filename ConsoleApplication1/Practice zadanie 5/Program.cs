@@ -44,7 +44,9 @@ namespace Practice_zadanie_5
             for (int i=0;i<row ;i++) {
                 for (int j=0;j<column;j++) {
                     if (coordmini == i && coordminj == j) {
-
+                        if (coordmini > coordmaxi) {
+                            
+                        }
                     }
                     if (coordmaxj == j && coordmaxi == i) {
 

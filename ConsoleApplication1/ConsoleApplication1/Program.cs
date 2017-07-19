@@ -14,43 +14,43 @@ namespace ConsoleApplication1
             const int size = 5;
             const int row = 3;
             const int column = 4;
-            int[] A = new int[size];
-            int[,] B = new int[row, column];
+            int[] arrA = new int[size];
+            int[,] arrB = new int[row, column];
             Console.WriteLine("\nОдномерный массив");
-            for (int i = 0; i < A.Length; i++)
+            for (int i = 0; i < arrA.Length; i++)
             {
                 string number = Console.ReadLine();
-                A[i] = Int32.Parse(number);
+                arrA[i] = Int32.Parse(number);
             }
             Random rnd = new Random();
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < column; j++)
                 {
-                    B[i, j] = rnd.Next(0, 100);
+                    arrB[i, j] = rnd.Next(0, 100);
                 }
             }
             Console.WriteLine("\nДвумерный массив\n");
             for (int i=0;i<row;i++) {
                 for (int j=0;j<column;j++) {
-                    Console.Write(B[i, j]+" ");
+                    Console.Write(arrB[i, j]+" ");
                 }
                 Console.WriteLine("\n");
             }
-            int maxA = A[0];
-            int minA = A[0];
-            int maxB = B[0, 0];
-            int minB = B[0, 0];
+            int maxA = arrA[0];
+            int minA = arrA[0];
+            int maxB = arrB[0, 0];
+            int minB = arrB[0, 0];
 
-            for (int i = 0; i < A.Length; i++)
+            for (int i = 0; i < arrA.Length; i++)
             {
-                if (maxA < A[i])
+                if (maxA < arrA[i])
                 {
-                    maxA = A[i];
+                    maxA = arrA[i];
                 }
-                else if (minA > A[i])
+                else if (minA > arrA[i])
                 {
-                    minA = A[i];
+                    minA = arrA[i];
                 }
             }
 
@@ -58,18 +58,19 @@ namespace ConsoleApplication1
             {
                 for (int j = 0; j < column; j++)
                 {
-                    if (maxB < B[i, j])
+                    if (maxB < arrB[i, j])
                     {
-                        maxB = B[i, j];
+                        maxB = arrB[i, j];
                     }
-                    else if (minB > B[i, j])
+                    else if (minB > arrB[i, j])
                     {
-                        minB = B[i, j];
+                        minB = arrB[i, j];
                     }
                 }
             }
-            string output = String.Format("Минимум A {0} , Максимум A {1}, Минимум B {2},Максимум B {3}", minA, maxA, minB, maxB);
-            Console.WriteLine(output);
+           //делай до конца;
+            Console.WriteLine("Минимум arrA {0} , Максимум arrA {1}, Минимум arrB {2},Максимум arrB {3}", minA, maxA, minB, maxB);
+            
             Console.ReadLine();
         }
     }

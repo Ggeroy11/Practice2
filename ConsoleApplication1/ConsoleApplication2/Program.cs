@@ -13,7 +13,7 @@ namespace ConsoleApplication2
             bool polin = true;
             Console.WriteLine("Введите строку");
             string text1 = Console.ReadLine();
-            for (int i = 0; i < text1.Length; i++)
+            for (int i = 0; i < text1.Length/2; i++)
             {
                 if (text1[i]!=text1[text1.Length-i-1]) {
                     polin = false;

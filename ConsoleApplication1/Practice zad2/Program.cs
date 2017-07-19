@@ -12,24 +12,28 @@ namespace Practice_zad2
         {
             const int size = 5;
             int count = 0;
-            char[] M = new char[size] { 'H', 'e', 'l', 'l', 'o' };
-            char[] N = new char[size] { 'W', 'o', 'r', 'l', 'd' };
-            char[] K = new char[10];
+            char[] arrM = new char[size] { 'H', 'e', 'l', 'l', 'o' };
+            char[] arrN = new char[size] { 'H', 'e', 'l', 'l', 'o' };
+            char[] arrK = new char[size];
 
             for (int i=0; i<size;i++) {
                 for (int j=0; j<size;j++) {
-                    if (M[i] == N[j]) {
-                        for (int k=0;k<count ;k++) {
-                            if (K[k] == M[i]) {
-                                K[count] = M[i];
-                                count++;
+                    if (arrM[i] == arrN[j]) {
+                        bool corect = false;
+                        for (int k=0;k<size ;k++) {
+                            if (arrK[k] == arrM[i]) {
+                                corect = true;
                             }
+                        }
+                        if (!corect) {
+                            arrK[count] = arrN[i];
+                            count++;
                         }
                     }
                 }
             }
-            for (int i=0;i<count;i++) {
-                Console.WriteLine(K[i]);
+            for (int i=0;i<arrK.Length;i++) {
+                Console.WriteLine(arrK[i]);
             }
             Console.ReadLine();
         }
